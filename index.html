@@ -783,6 +783,14 @@
 
         @media (max-width: 576px) {
             h1 { font-size: 2.4rem !important; }
+            .hero-text .dynamic-text {
+                font-size: 1.4rem;
+                min-height: 60px;
+            }
+            .about-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
             .profile-img-container { width: 250px; height: 250px; }
             .hero-btns { display: flex; flex-direction: column; align-items: center; gap: 15px; }
             .btn { width: 100%; text-align: center; }
@@ -1010,10 +1018,11 @@
                         </div>
                     </div>
                     <div class="contact-form">
-                        <form>
-                            <div class="form-group"><input type="text" class="form-control" placeholder="Your Name" required></div>
-                            <div class="form-group"><input type="email" class="form-control" placeholder="Your Email" required></div>
-                            <div class="form-group"><textarea class="form-control" placeholder="Your Message" required></textarea></div>
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="229e804f-c53f-465a-ab1b-abad8b9d5805">
+                            <div class="form-group"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>
+                            <div class="form-group"><input type="email" name="email" class="form-control" placeholder="Your Email" required></div>
+                            <div class="form-group"><textarea name="message" class="form-control" placeholder="Your Message" required></textarea></div>
                             <button type="submit" class="btn">Send Message</button>
                         </form>
                     </div>
@@ -1033,6 +1042,7 @@
     
     <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
+    <script src="https://web3forms.com/client/script.js" async defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Typed.js animation
